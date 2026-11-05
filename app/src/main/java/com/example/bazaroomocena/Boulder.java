@@ -1,11 +1,15 @@
 package com.example.bazaroomocena;
 
+import androidx.room.Entity;
+
+@Entity(tableName = "boulders")
 public class Boulder {
-String Grade;
-String Type;
-int Attempts = 0;
-boolean isDone = false;
-String Name;
+     public int ID;
+    public String Grade;
+    public String Type;
+    public int Attempts = 0;
+    public boolean isDone = false;
+    public String Name;
 
     public Boulder(String grade, String type, int attempts, boolean isDone, String name) {
         Grade = grade;

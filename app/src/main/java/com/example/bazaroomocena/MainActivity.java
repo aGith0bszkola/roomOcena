@@ -24,5 +24,8 @@ Spinner  gradeSpinner, typeSpinner;
                 getApplicationContext(),BouldersDatabase.class,"boulder_db")
                 .allowMainThreadQueries().build();
 
+        bouldersDatabase.get_boulderDAO().insert_boulder_to_db(
+                new Boulder("v10","crimp",0,false,"burden of dreams")
+        );
     }
 }
