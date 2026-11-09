@@ -7,12 +7,19 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/Nametextview"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp">
 
+    </TextView>
     <ListView
+        android:id="@+id/listViewBoulders"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:background="@color/black"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,14 +30,17 @@
             android:id="@+id/Gradespinner"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+           />
 
-        <TextView
-            android:id="@+id/Nametextview"
+        <Button
+            android:id="@+id/addNewBoulder"
             android:layout_width="wrap_content"
-            android:layout_height="35dp">
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:backgroundTint="@color/black"/>
 
-        </TextView>
+
 
         <Spinner
             android:id="@+id/Typespinner"

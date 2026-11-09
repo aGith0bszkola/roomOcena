@@ -1,23 +1,39 @@
+
 package com.example.bazaroomocena;
 
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 @Entity(tableName = "boulders")
 public class Boulder {
-     public int ID;
+
+    @PrimaryKey(autoGenerate = true)
+    public int ID;
+
     public String Grade;
     public String Type;
     public int Attempts = 0;
     public boolean isDone = false;
     public String Name;
 
-    public Boulder(String grade, String type, int attempts, boolean isDone, String name) {
-        Grade = grade;
-        Type = type;
-        Attempts = attempts;
+    public Boulder(String Name, boolean isDone, int Attempts, String Type, String Grade, int ID) {
+        this.Name = Name;
         this.isDone = isDone;
-        Name = name;
+        this.Attempts = Attempts;
+        this.Type = Type;
+        this.Grade = Grade;
+        this.ID = ID;
+    }
+
+    @Override
+    public String toString() {
+        return "Boulder{" +
+                "ID=" + ID +
+                ", Grade='" + Grade + '\'' +
+                ", Type='" + Type + '\'' +
+                ", Attempts=" + Attempts +
+                ", isDone=" + isDone +
+                ", Name='" + Name + '\'' +
+                '}';
     }
 }
-
-
