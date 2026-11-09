@@ -1,10 +1,12 @@
 package com.example.bazaroomocena;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -20,8 +22,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 BouldersDatabase bouldersDatabase;
-TextView nameTextView;
-Button buttonAddBoulder;
+EditText nameTextView;
+Button buttonAddBoulder, buttonFinishAddingBoulder;
 Spinner  gradeSpinner, typeSpinner;
 ListView listViewBoulders;
 List<Boulder> boulderList;
@@ -41,8 +43,11 @@ ArrayAdapter<Boulder> arrayAdapter;
 //        );
         gradeSpinner = findViewById(R.id.Gradespinner);
         typeSpinner = findViewById(R.id.Typespinner);
+
         buttonAddBoulder = findViewById(R.id.addNewBoulder);
+        buttonFinishAddingBoulder = findViewById(R.id.finishAddingNewBoulderButton);
         nameTextView = findViewById(R.id.Nametextview);
+
         listViewBoulders = findViewById(R.id.listViewBoulders);
         boulderList = bouldersDatabase.get_boulderDAO().select_all_from_boulders_db();
         arrayAdapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, boulderList);
@@ -50,8 +55,10 @@ ArrayAdapter<Boulder> arrayAdapter;
         buttonAddBoulder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, AddNewBoulder.class);
+                startActivity(intent);
             }
+
         });
 
     }
