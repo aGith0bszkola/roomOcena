@@ -26,8 +26,8 @@ static BouldersDatabase bouldersDatabase;
 EditText nameTextView;
 Button buttonAddBoulder, buttonFinishAddingBoulder;
 Spinner  gradeSpinner, typeSpinner;
-ListView listViewBoulders;
-List<Boulder> boulderList;
+static ListView listViewBoulders;
+static List<Boulder> boulderList;
 ArrayAdapter<Boulder> arrayAdapter;
     @SuppressLint("MissingInflatedId")
     @Override
