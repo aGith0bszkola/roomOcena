@@ -21,7 +21,8 @@ import androidx.room.Room;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-BouldersDatabase bouldersDatabase;
+
+static BouldersDatabase bouldersDatabase;
 EditText nameTextView;
 Button buttonAddBoulder, buttonFinishAddingBoulder;
 Spinner  gradeSpinner, typeSpinner;
@@ -55,7 +56,7 @@ ArrayAdapter<Boulder> arrayAdapter;
         buttonAddBoulder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AddNewBoulder.class);
+                Intent intent = new Intent(MainActivity.this, AddActivity.class);
                 startActivity(intent);
             }
 

@@ -27,7 +27,8 @@ public class AddNewBoulder extends AppCompatActivity {
             addNewBoulderSpinnerGrade = findViewById(R.id.addNewBoulderSpinnerGrade);
             addNewBoulderSpinnerType = findViewById(R.id.addNewBoulderSpinnerType);
             finishAddingBoulder = findViewById(R.id.finishAddingNewBoulderButton);
-;
+
     }
+
 
 }
