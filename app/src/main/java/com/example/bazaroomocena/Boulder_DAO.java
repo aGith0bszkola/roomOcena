@@ -20,5 +20,6 @@ public interface Boulder_DAO {
     void update_boulder(Boulder boulder);
 @Query("SELECT * FROM BOULDERS")
     List<Boulder> select_all_from_boulders_db();
-
+@Query("SELECT * FROM BOULDERS where Grade = :argument")
+    List<Boulder> select_all_from_selectet_grade(String argument);
 }

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,7 +37,7 @@ ArrayAdapter<Boulder> arrayAdapter;
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         bouldersDatabase = Room.databaseBuilder(
-                getApplicationContext(),BouldersDatabase.class,"boulder_db")
+                        getApplicationContext(), BouldersDatabase.class, "boulder_db")
                 .allowMainThreadQueries().build();
 
 //        bouldersDatabase.get_boulderDAO().insert_boulder_to_db(
@@ -60,8 +61,30 @@ ArrayAdapter<Boulder> arrayAdapter;
                 startActivity(intent);
             }
 
+
+        });
+        listViewBoulders.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Boulder clickedBoulder = boulderList.get(i);
+                clickedBoulder.Attempts = clickedBoulder.Attempts+1;
+                arrayAdapter.notifyDataSetChanged();
+            }
         });
 
+        listViewBoulders.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Boulder clickedBoulder = boulderList.get(i);
+                clickedBoulder.isDone = true;
+                arrayAdapter.notifyDataSetChanged();
+                return true;
+            }
+        });
+
+        gradeSpinner.getSelectedItem(
+
+        );
     }
 }
 

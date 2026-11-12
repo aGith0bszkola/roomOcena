@@ -25,15 +25,16 @@ public class Boulder {
 
     }
 
+
     @Override
     public String toString() {
-        return "Boulder{" +
+        return "Boulder: " + Name + '\'' +
 
-                ", Grade='" + Grade + '\'' +
-                ", Type='" + Type + '\'' +
-                ", Attempts=" + Attempts +
-                ", isDone=" + isDone +
-                ", Name='" + Name + '\'' +
-                '}';
+                "Grade:" + Grade + '\'' +
+                "Type:" + Type + '\'' +
+                " Attempts:" + Attempts +'\'' +
+                "Done? " + isDone;
+
+
     }
 }
